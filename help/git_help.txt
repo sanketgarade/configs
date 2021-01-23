@@ -1,0 +1,20 @@
+fetch PR -
+# git fetch origin refs/pull/ID/merge:BRANCHNAME
+
+**** alias ****
+alias should look like - 
+
+# fetchpr = '!f() { git fetch origin refs/pull/$1/merge:$2 ; }; f'
+where -
+$1 = PR ID
+$2 = new branch name for this PR
+
+IMP - use single quotes when making the alias, not double quotes.
+
+then run - 
+# git fetchpr 33 pr33
+
+This will create new branch called pr33 which has the PR #33
+
+checkout PR - 
+# git checkout BRANCHNAME

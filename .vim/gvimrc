@@ -1,0 +1,84 @@
+:set number	" show line numbers
+:set rnu	" show relative line numbers
+":set ++ffs=dos	" fileformat = dos (use CRLF for line endings)
+:set ignorecase	" enable ignorecase for search
+:set smartcase	" enable smartcase (lowercase search = case insensitive search)
+"set t_Co=256
+set cul	" enable cursorline (underline below current line for easy spotting)
+":hi CursorLine   guibg=brown
+:hi clear CursorLine
+:highlight CursorLine gui=underline cterm=underline
+"
+" Do not create an undo file
+":set noundofile
+" set directories for back,swap and undo files
+set backupdir=~\vimfiles\xtras\backup//
+set directory=~\vimfiles\xtras\directory//
+set undodir=~\vimfiles\xtras\undodir//
+
+" set your path variable to current directory (from which you launched vim)
+" and to all directories under current directory recursively.
+set path=$PWD/**
+
+" set gui font
+set guifont=Consolas:h10
+set nowrap
+
+hi MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
+"set nocp
+filetype plugin on
+
+highlight Normal guifg=white guibg=black
+
+" _____ Japanese characters ___ BEGIN
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+" _____ Japanese characters ___ END
+
+"" _____ vim-plug ____ BEGIN
+"" Specify a directory for plugins
+"" - Avoid using standard Vim directory names like 'plugin'
+"call plug#begin('~/.vim/plugged')
+"" Make sure you use single quotes
+"" NERD Commenter (from )
+"Plug 'preservim/nerdcommenter'
+"" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug 'junegunn/vim-easy-align'
+"call plug#end()
+"" _____ vim-plug ____ END
+
+" _____ buffer remaps  ____ BEGIN
+" open buffer list and wait for input 
+:nnoremap <F9> :buffers<CR>:buffer<Space>
+:nnoremap <F10> :bp<CR>
+:nnoremap <F11> :bn<CR>
+:nnoremap <F12> <C-^>
+:set hidden "allow to swtich buffers without saving
+" _____ buffer remaps  ____ END
+
+" Ctrl+J will break a line at the cursor
+":nnoremap <NL> i<CR><ESC>
+" remapping mark seekers (for easy access on Japanese keyboard)
+:nnoremap - '
+:onoremap - '
+:nnoremap ^ `
+:onoremap ^ `
+
+" _____ Tabs and indents ____ BEGIN
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" _____ Tabs and indents ____ END
+
+" _____ buffer views ____ BEGIN
+" this is useful for saving folds
+"augroup remember_folds
+"  autocmd!
+"  autocmd BufWinLeave * mkview
+"  autocmd BufWinEnter * silent! loadview
+"augroup END
+" _____ buffer views ____ END
+
+" set working directory
+cd \zSanket\CF2\FW\CF2_EOP_FW

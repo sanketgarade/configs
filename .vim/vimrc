@@ -1,0 +1,88 @@
+:set number	" show line numbers
+:set rnu	" show relative line numbers
+":set ++ffs=dos	" fileformat = dos (use CRLF for line endings)
+:set ignorecase	" enable ignorecase for search
+:set smartcase	" enable smartcase (lowercase search = case insensitive search)
+:set cul	" enable cursorline (underline below current line for easy spotting)
+:set hlsearch " enable search items to be highlighed
+:se nostartofline " keep cursor position when switching buffers
+hi MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
+"set nocp
+filetype plugin on
+
+" set your path variable to current directory (from which you launched vim)
+" and to all directories under current directory recursively.
+set path=$PWD/**
+set nowrap
+
+" _____ Japanese characters ___ BEGIN
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+" _____ Japanese characters ___ END
+
+" _____ vim-plug ____ BEGIN
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+" Make sure you use single quotes
+" NERD Commenter (from )
+Plug 'preservim/nerdcommenter'
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+call plug#end()
+" _____ vim-plug ____ END
+
+" _____ buffer remaps  ____ BEGIN
+" open buffer list and wait for input
+:nnoremap <F9> :buffers<CR>:buffer<Space>
+:nnoremap <F10> :bp<CR>
+:nnoremap <F11> :bn<CR>
+:nnoremap <F12> <C-^>
+
+:nnoremap ,b :ls<CR>:buffer<Space>
+nmap <C-P> :bp<CR>
+nmap <C-N> :bn<CR>
+nmap <C-M> <C-^>
+:set hidden "allow to swtich buffers without saving
+" _____ buffer remaps  ____ END
+
+" _____ mark remaps  ____ BEGIN
+" remapping mark seekers (for easy access on Japanese keyboard)
+:nnoremap - '
+:onoremap - '
+:nnoremap ^ `
+:onoremap ^ `
+" _____ mark remaps  ____ BEGIN
+
+" remap for find and replace global with confirmation
+nnoremap <F3> :%s/<C-r><C-w>/
+" remap for find word under cursor and replace global with confirmation (NOT WORKING)
+" nnoremap <F4> :%s/<C-W>/<C-W>/gc
+
+" clear search highlight
+:nnoremap <F5> :noh<CR>
+
+
+" _____ Tabs and indents ____ BEGIN
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" _____ Tabs and indents ____ END
+
+" _____ buffer views ____ BEGIN
+" this is useful for saving folds
+"augroup remember_folds
+"  autocmd!
+"  autocmd BufWinLeave * mkview
+"  autocmd BufWinEnter * silent! loadview
+"augroup END
+" _____ buffer views ____ END
+
+" function to remove white spaces from entire file
+" https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file/456#456?newreg=c8bacd9c56b44f999648c5b73d8386fe
+fun! WhiteSpaceRemove()
+	let l:save = winsaveview()
+	keeppatterns %s/\s\+$//e
+	call winrestview(l:save)
+endfun

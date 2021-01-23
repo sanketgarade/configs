@@ -1,0 +1,84 @@
+Help doc and imp notes for bash
+
+__________________ Special variables
+
+$0 - The name of the Bash script.
+$1 - $9 - The first 9 arguments to the Bash script. (As mentioned above.)
+$# - How many arguments were passed to the Bash script.
+$@ - All the arguments supplied to the Bash script.
+$? - The exit status of the most recently run process.
+$$ - The process ID of the current script.
+$USER - The username of the user running the script.
+$HOSTNAME - The hostname of the machine the script is running on.
+$SECONDS - The number of seconds since the script was started.
+$RANDOM - Returns a different random number each time is it referred to
+$LINENO - Returns the current line number in the Bash script.
+
+__________________ Command substitution
+
+Command substitution allows the output of a command to replace the command itself. 
+Command substitution occurs when a command is enclosed as follows:
+$(command) OR `command`
+
+e.g. 
+$ d=date
+$ echo $d
+$ date
+but...
+$ d=$(date)
+$ echo $d
+$ 2019-11-23
+
+__________________ Concantanate strings
+
+a='Hello'
+b='World'
+c="${a} ${b}"
+echo "${c}"
+> Hello World
+
+OR
+
+$ A="X Y"
+$ A+=" Z"
+$ echo "$A"
+X Y Z
+
+__________________ if
+
+# check empty string $a
+$ if [ -z "$a" ]; then echo "empty string"; else echo "not empty"; fi
+
+#
+$ find . -maxdepth 1 -type d | xargs -n1 -i mv "{}" "$(sed 's/ /_/g' <<<"{}")"
+
+# find if the string contains the  characters 1 or w or has a space ' '
+$ if [[ "$str" =~ (1|w| ) ]]; then echo "has space"; else echo "no space"; fi
+
+__________________ if with xargs
+
+# find directories in current directory and tells if they have any spaces or not in their names
+find . -maxdepth 1 -type d | xargs -n1 -i bash -c 'if [[ "{}" =~ ( ) ]]; then echo "{} has space"; else echo "{} no space"; fi'
+
+# find directories in current directory and tells if they have replaces all spaces in their names with underscores
+# IMP - this needs access to the sp2us.sh script
+$ find . -maxdepth 1 -type d | xargs -n1 -i bash -c 'if [[ "{}" =~ ( ) ]]; then ./sp2us.sh "{}" ; else echo "{} no space"; fi'
+
+__________________ Pattern matching
+examples - 
+
+[ian@pinguino ~]$ x="a1 b1 c2 d2"
+[ian@pinguino ~]$ echo ${x#*1}
+b1 c2 d2
+[ian@pinguino ~]$ echo ${x##*1}
+c2 d2
+[ian@pinguino ~]$ echo ${x%1*}
+a1 b
+[ian@pinguino ~]$ echo ${x%%1*}
+a
+[ian@pinguino ~]$ echo ${x/1/3}
+a3 b1 c2 d2
+[ian@pinguino ~]$ echo ${x//1/3}
+a3 b3 c2 d2
+[ian@pinguino ~]$ echo ${x//?1/z3}
+z3 z3 c2 d2

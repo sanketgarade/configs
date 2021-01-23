@@ -1,0 +1,9 @@
+# load directory
+cd '~'
+
+# load control package
+pkg load control
+disp("++ control package loaded ++")
+
+# customise prompt - show current directory path 
+PS1 ("OCTAVE(\\w)\\n> ")

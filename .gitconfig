@@ -1,0 +1,39 @@
+[core]
+	editor = vim
+
+[alias]
+	unstage   = reset @ --
+	bc        = difftool --dir-diff
+	lol       = log --oneline
+	ss        = status -s
+	cfgg      = config --global
+	rso       = remote show origin
+	sw        = switch
+	last      = log -1 --date=iso8601
+	lhndm     = log --pretty="format:%h,%an,%ad,%s"
+	lp1       = log --pretty="format:%h,%ad,%an,%s"
+	b         = branch
+	lg        = log --graph
+	lolfp     = log --oneline --first-parent
+	bd        = branch -D
+	mergenfnc = merge --no-ff --no-commit
+	fo        = fetch origin
+	lolg      = log --oneline --graph
+	pullo     = pull origin
+	pusho     = push origin
+	loll      = log -1 --oneline
+	fetchpr   = fg() { git fetch origin refs/pull//merge: ; }; f
+	ls-pr     = ls-remote origin pull/*
+	cma       = commit --amend
+	cmt       = commit
+	logs      = log --stat
+	blist	  = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	bdate     = for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(color:reset)' | column -t -s
+	logbranch = "for-each-ref --sort=-committerdate refs/heads/ --format='[%1B[0;31m]%(refname:short)[%1B[m]   %(subject)' "
+
+	#recent= !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always | column -ts'|'
+	recentdetails= !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)%(color:reset)' --color=always | column -ts'|'
+	recentdate= !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(committerdate:short)%(color:reset)' --color=always | column -ts'|'
+
+#git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
