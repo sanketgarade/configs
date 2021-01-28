@@ -17,14 +17,23 @@ zstyle ':vcs_info:git:*' formats '%b'
 # ************ aliases ************
 # Homebrew alias for intel (x86) and M1 (ARM)
 # https://stackoverflow.com/questions/64963370/error-cannot-install-in-homebrew-on-arm-processor-in-intel-default-prefix-usr/65398385?noredirect=1#comment115997092_65398385
-alias brew86="arch -x86_64 /usr/local/homebrew/bin/brew"
-alias brewARM="/opt/homebrew/bin/brew"
+# alias brew86="arch -x86_64 /usr/local/homebrew/bin/brew"
+# alias brewARM="/opt/homebrew/bin/brew"
+
 alias ..="cd .."
 alias ...="cd"
 alias zss="source ~/.zshrc"
 alias zse="vim ~/.zshrc"
-alias ll="ls -alho"
+alias vre="vim ~/.vim/vimrc"
+alias ll="ls -alhoG"
 alias clc="clear"
 
 # ************ vim mode ************
 bindkey -v
+
+# ************ syntax highlighting  ************
+source /Users/sanket/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ************ tab completion  ************
+# vim like smartcase for tab completion
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'

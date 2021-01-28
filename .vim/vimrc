@@ -10,6 +10,12 @@ hi MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
 "set nocp
 filetype plugin on
 
+" set syntax highlighting on
+syntax on
+
+" always show status line
+set laststatus=2
+
 " set your path variable to current directory (from which you launched vim)
 " and to all directories under current directory recursively.
 set path=$PWD/**
@@ -24,13 +30,13 @@ set fileformats=unix,dos,mac
 " _____ vim-plug ____ BEGIN
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 " NERD Commenter (from )
-Plug 'preservim/nerdcommenter'
+"Plug 'preservim/nerdcommenter'
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-call plug#end()
+"Plug 'junegunn/vim-easy-align'
+"call plug#end()
 " _____ vim-plug ____ END
 
 " _____ buffer remaps  ____ BEGIN
