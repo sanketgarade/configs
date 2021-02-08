@@ -1,5 +1,6 @@
 :set number	" show line numbers
 :set rnu	" show relative line numbers
+:set ruler	" show ruler (line and column number)
 ":set ++ffs=dos	" fileformat = dos (use CRLF for line endings)
 :set ignorecase	" enable ignorecase for search
 :set smartcase	" enable smartcase (lowercase search = case insensitive search)
@@ -19,7 +20,7 @@ set laststatus=2
 " set your path variable to current directory (from which you launched vim)
 " and to all directories under current directory recursively.
 set path=$PWD/**
-set nowrap
+" set nowrap
 
 " _____ Japanese characters ___ BEGIN
 set encoding=utf-8
@@ -30,26 +31,24 @@ set fileformats=unix,dos,mac
 " _____ vim-plug ____ BEGIN
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
-"call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
-" NERD Commenter (from )
-"Plug 'preservim/nerdcommenter'
+" Plug 'preservim/nerdcommenter'
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-"Plug 'junegunn/vim-easy-align'
-"call plug#end()
+" Plug 'junegunn/vim-easy-align'
+" call plug#end()
 " _____ vim-plug ____ END
 
-" _____ buffer remaps  ____ BEGIN
-" open buffer list and wait for input
-:nnoremap <F9> :buffers<CR>:buffer<Space>
-:nnoremap <F10> :bp<CR>
-:nnoremap <F11> :bn<CR>
-:nnoremap <F12> <C-^>
+" see list of all vi keybindings
+" https://hea-www.harvard.edu/~fine/Tech/vi.html
 
-:nnoremap ,b :ls<CR>:buffer<Space>
-nmap <C-P> :bp<CR>
-nmap <C-N> :bn<CR>
-nmap <C-M> <C-^>
+" _____ buffer remaps  ____ BEGIN
+
+" :nnoremap ,b :ls<CR>:buffer<Space>
+nmap <C-A> :buffers<CR>:buffer<Space>	" show buffer list
+nmap <C-P> :bp<CR>	" previous buffer
+nmap <C-N> :bn<CR>	" next buffer
+nmap <C-M> <C-^>	" modified buffer
 :set hidden "allow to swtich buffers without saving
 " _____ buffer remaps  ____ END
 
@@ -67,7 +66,8 @@ nnoremap <F3> :%s/<C-r><C-w>/
 " nnoremap <F4> :%s/<C-W>/<C-W>/gc
 
 " clear search highlight
-:nnoremap <F5> :noh<CR>
+" :nnoremap <F5> :noh<CR>
+:nnoremap cs :noh<CR>" clear search highlight
 
 
 " _____ Tabs and indents ____ BEGIN
