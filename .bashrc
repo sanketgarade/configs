@@ -1,3 +1,4 @@
+################# on PC #################
 # To make updated .bashrc file reflect in current bash session,
 # run the "source ~/.bash_profile" command after updating this file.
 # IMP : This will reflect the latest "added" changes, but it does not
@@ -35,3 +36,14 @@ sec() { sed -n -e "/___$1___/,/xxx$1xxx/p" "$2" ; } ;
 # Function to see a specific line from a source file
 # Usage: line 11 rep.sh
 line() { sed "$1q;d" "$2" ; } ;
+
+################# on Mac #################
+# git branch show in prompt in colour
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export PS1="\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
+
+
+# bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
