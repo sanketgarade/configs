@@ -7,6 +7,7 @@
 :set cul	" enable cursorline (underline below current line for easy spotting)
 :set hlsearch " enable search items to be highlighed
 :se nostartofline " keep cursor position when switching buffers
+:set showcmd " Show (partial) command in the last line of the screen.
 hi MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
 "set nocp
 filetype plugin on

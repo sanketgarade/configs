@@ -32,6 +32,7 @@ alias clc="clear"
 bindkey -v
 
 # ************ syntax highlighting  ************
+# install from https://github.com/zsh-users/zsh-syntax-highlighting
 source /Users/sanket/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ************ tab completion  ************
