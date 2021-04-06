@@ -6,13 +6,28 @@ autoload -Uz compinit && compinit
 rm -f $HOMEBREW_PREFIX/share/zsh/site-functions/_git
 
 # ************ git prompt  ************
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-# PROMPT=\$vcs_info_msg_0_'%# '
-zstyle ':vcs_info:git:*' formats '%b'
+# 1. Either do this ---
+# autoload -Uz vcs_info
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# setopt prompt_subst
+# RPROMPT=\$vcs_info_msg_0_
+# # PROMPT=\$vcs_info_msg_0_'%# '
+# zstyle ':vcs_info:git:*' formats '%b'
+# 
+# 2. OR do this ---
+source ~/.git-prompt.sh
+	# 2.1
+	# precmd () { __git_ps1 "%n" ":%~$ " "|%s" }
+	# OR
+	# 2.2
+ 	setopt PROMPT_SUBST
+ 	# PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+ 	PS1='%B%K{17}$(__git_ps1 "[%s]")%b%k%F{red}%K{black}%c%f%k %F{127}\$ %f'
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWCOLORHINTS=1
 
 # ************ aliases ************
 # Homebrew alias for intel (x86) and M1 (ARM)
@@ -25,16 +40,34 @@ alias ...="cd"
 alias zss="source ~/.zshrc"
 alias zse="vim ~/.zshrc"
 alias vre="vim ~/.vim/vimrc"
-alias ll="ls -alhoG"
+alias ll="ls -alhoG --color"
 alias clc="clear"
+# xfce open file manager command
+alias open=xdg-open
 
 # ************ vim mode ************
 bindkey -v
 
-# ************ syntax highlighting  ************
-# install from https://github.com/zsh-users/zsh-syntax-highlighting
-source /Users/sanket/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ************ multibyte characters ************
+# https://unix.stackexchange.com/questions/598440/zsh-indic-fonts-support-rendering-issue-which-is-working-fine-on-bash
+set -o combiningchars
+
+
+# locales
+export LC_ALL=en_IN.UTF-8
+export LANG=en_IN.UTF-8
+export LANGUAGE=en_IN.UTF-8
+
+# ************* save zsh history *************
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 # ************ tab completion  ************
 # vim like smartcase for tab completion
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+#
+# ************ syntax highlighting  ************
+# install from https://github.com/zsh-users/zsh-syntax-highlighting
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
