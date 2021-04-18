@@ -33,3 +33,5 @@ data.location=~/.task
 report.next.sort=project
 report.all.sort=project
 report.completed.sort=project
+
+# TODO - add colour coding to planned, wip, completed, overdue tasks
