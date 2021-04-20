@@ -42,6 +42,7 @@ alias zse="vim ~/.zshrc"
 alias vre="vim ~/.vim/vimrc"
 alias ll="ls -alhoG --color"
 alias clc="clear"
+alias rr="ranger"
 # xfce open file manager command
 alias open=xdg-open
 
