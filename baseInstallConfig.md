@@ -7,6 +7,13 @@ which is mentioned in the comments.
 
 ---
 
+# WINDOW MANAGER
+## dwm
+#### http://forums.debian.net/viewtopic.php?f=16&t=65110
+not done exactly as per above link, but somewhat similar
+
+---
+
 # BLUETOOTH
 ## connect bluetooth devices
 #### Using bluetoothctl
