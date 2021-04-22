@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# declare this variable to make some java programs work
+# with certain window managers (such as dwm)
+# this woraround can be found in `man dwm`.
+# tested ok with JOSM on debian bullseye
+export _JAVA_AWT_WM_NONREPARENTING=1
+echo "I: user environment variables configured"
