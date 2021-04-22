@@ -1,27 +1,39 @@
 :set number	" show line numbers
 :set rnu	" show relative line numbers
-:set ruler	" show ruler (line and column number)
-":set ++ffs=dos	" fileformat = dos (use CRLF for line endings)
+:set laststatus=2 " always show status line
 :set ignorecase	" enable ignorecase for search
 :set smartcase	" enable smartcase (lowercase search = case insensitive search)
 :set cul	" enable cursorline (underline below current line for easy spotting)
 :set hlsearch " enable search items to be highlighed
 :se nostartofline " keep cursor position when switching buffers
 :set showcmd " Show (partial) command in the last line of the screen.
-hi MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
-"set nocp
-filetype plugin on
+:set textwidth=80 " wrap text at 80 chars when typing
+
+"""""""""""""""""""" COLOURS """"""""""""""""""""
+:set background=dark "needed for st term
+""" 80 char limit highlighting """
+""" either this
+" highlight lines that are longer than 80 chars
+" https://stackoverflow.com/a/235970
+"highlight OverLength cterm=bold ctermbg=darkblue
+"match OverLength /\%81v.\+/
+""" OR this
+" colour the 81st col
+:set cc=81
+highlight colorcolumn ctermbg=darkblue
+" highlight for mathcing parathesis (brackets)
+highlight MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
 
 " set syntax highlighting on
 syntax on
 
-" always show status line
-set laststatus=2
+filetype plugin on
+
+
 
 " set your path variable to current directory (from which you launched vim)
 " and to all directories under current directory recursively.
 set path=$PWD/**
-" set nowrap
 
 " _____ Japanese characters ___ BEGIN
 set encoding=utf-8
@@ -63,12 +75,13 @@ nmap <C-M> <C-^>	" modified buffer
 
 " remap for find and replace global with confirmation
 nnoremap <F3> :%s/<C-r><C-w>/
-" remap for find word under cursor and replace global with confirmation (NOT WORKING)
+" remap for find word under cursor and replace global with confirmation (not
+" working)
 " nnoremap <F4> :%s/<C-W>/<C-W>/gc
 
 " clear search highlight
 " :nnoremap <F5> :noh<CR>
-:nnoremap cs :noh<CR>" clear search highlight
+:nnoremap cs :noh<CR>
 
 
 " _____ Tabs and indents ____ BEGIN
