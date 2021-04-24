@@ -43,8 +43,10 @@ alias vre="vim ~/.vim/vimrc"
 alias ll="ls -alhoG --color"
 alias clc="clear"
 alias rr="ranger"
-# xfce open file manager command
-alias open=xdg-open
+alias glogin="eval \`ssh-agent\`; ssh-add"
+alias dwc="cd ~/oss/suckless/dwm"
+alias stc="cd ~/oss/suckless/st"
+
 
 # ************ vim mode ************
 bindkey -v
