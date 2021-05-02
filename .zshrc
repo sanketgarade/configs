@@ -67,6 +67,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+# Install Ruby Gems to ~/gems
+# https://jekyllrb.com/docs/installation/ubuntu/
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
 # ************ tab completion  ************
 # vim like smartcase for tab completion
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
