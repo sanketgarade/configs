@@ -29,6 +29,8 @@ syntax on
 
 filetype plugin on
 
+" do not wrap search at end of file
+:set nowrapscan
 
 
 " set your path variable to current directory (from which you launched vim)
