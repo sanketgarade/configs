@@ -1,0 +1,28 @@
+! vim like navigation system wide
+! Caps_Lock + h,j,k,l = left,down,up,right
+! https://shellhell.wordpress.com/2012/01/31/hello-world/
+
+! The detailed explanation of the code:
+! 
+! 1. The word keysym at the beginning of the line means that a next word should be interpreted by xmodmap as the “name” of the key. The word keycode means that it should be interpreted as it’s “numerical id” produced by a keyboard. Keycodes and keysyms for your keyboard can be checked using the xev utility.
+! 2. Lines 2-4 deactivate the ‘Caps_Lock’ function entirely, lines 6-7 bind ‘Mode_Switch’ to the ‘Caps_Lock’ key.
+! 3. You should check a keycode for the ‘Caps_Lock’ key on your keyboard with xev utility (see above).
+! 4. Next lines change bindings for home row keys.
+! 5. We change the third and forth column (after ‘=’) to make sure we create “alternative layout” (the one accessed with “Mode_switch” or “Shift-Mode_switch”), rather than modify layouts accessed without any modifier (1st column), with Shift (2nd column), AltGr (5th column) or Shift-AltGr (6th column)
+! 6. Each line binds one of the keysyms “Up, Down, Left, Right” to an appropriate key.
+! 7. The rest of each line is there to keep my default bindings intact.
+
+! remove Caps Lock
+clear lock
+remove Lock = Caps_Lock
+remove Shift = Caps_Lock
+! add Mode_switch
+keycode 66 = NoSymbol NoSymbol
+keycode 66 = Mode_switch
+
+keysym h = h H Left NoSymbol NoSymbol NoSymbol
+keysym j = j J Down NoSymbol NoSymbol NoSymbol
+keysym k = k K Up NoSymbol NoSymbol NoSymbol
+keysym l = l L Right NoSymbol lstroke Lstroke
+
+! TODO - what is lstroke and Lstroke?
