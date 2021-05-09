@@ -72,6 +72,11 @@ setopt appendhistory
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
+# when installing blogit, got warning to add below directory to PATH
+# as blogit (and its dependencies) are installed to ~/.local/bin
+# https://gitlab.com/oz123/blogit
+export PATH=$HOME/.local/bin:$PATH
+
 # ************ tab completion  ************
 # vim like smartcase for tab completion
 zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
