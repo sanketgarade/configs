@@ -45,6 +45,8 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 #### source it from the end of .zshrc (if no being done already)
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+## git prompt
+mv git-prompt.sh ~/.git-prompt.sh
 
 ---
 # DISPLAY
