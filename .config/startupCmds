@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+# disable PC beep
+sudo rmmod pcspkr
+echo "I: PC beep disabled."
