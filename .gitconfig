@@ -1,5 +1,8 @@
 [core]
 	editor = vim
+	# for displaying utf-8 encoded pathnames in `git status`
+	# https://stackoverflow.com/a/22828826
+	quotepath = off
 
 [alias]
 	unstage   = reset @ --
