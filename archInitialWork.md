@@ -21,3 +21,14 @@ cd in st directory
 `sudo pacman -S acpilight`
 set absolute brightness or inc/dec
 `sudo xbacklight -set 20`
+### fonts
+#### latin and common fonts
+google noto fonts
+#### indic
+ttf devanagari TODO
+
+### SSH
+
+
+sudo pacman -S openssh
+sudo pacman -S xclip
