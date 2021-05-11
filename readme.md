@@ -1,9 +1,25 @@
-# Config files
+# config
+Config files and help documents for various software and OSes.
 
-### vim
-.vim folder contains raw dump data from vim installation on windows laptop.
+### config files
+```
+- .config
+- .gitconfig
+- .my_keyboard
+- .octaverc
+- .taskrc
+- .vim
+- .xinitrc
+- .zprofile
+- .zshrc
+```
 
-It  may be broken
+### Scripts
+```
+git-prompt.sh
+```
 
-### To-do
-- make scripts which copy configs from this folder to their respective destinations and vice-versa.
+### Docs
+- archInitialWork.md
+- pacstrapInstall.md
+- readme.md
