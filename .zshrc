@@ -84,3 +84,7 @@ zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
 # ************ syntax highlighting  ************
 # install from https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# include newly installed packages in zsh tab completion on Arch
+# https://wiki.archlinux.org/title/zsh#Persistent_rehash
+zstyle ':completion:*' rehash true
