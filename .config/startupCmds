@@ -1,5 +1,12 @@
 #!/bin/zsh
 
-# disable PC beep
-sudo rmmod pcspkr
-echo "I: PC beep disabled."
+# start NetworkManager service
+sudo systemctl start NetworkManager.service
+echo "I: NetworkManager.service started"
+
+# TODO - add a delay here to allow service to start before initiating next
+# command
+
+# connect wifi
+nmcli device connect wlp3s0
+echo "I: wifi connection requested"
