@@ -7,8 +7,5 @@
 cp ~/.zshrc .zshrc
 cp ~/.gitconfig .gitconfig
 cp ~/.vim/vimrc .vim/vimrc
-cp ~/.bashrc .bashrc
-cp ~/.bash_profile .bash_profile
-cp ~/.octaverc .octaverc
-cp ~/.alacritty.yml .alacritty.yml
-cp ~/keyfaker.ps1 keyfaker.ps1
+cp ~/.config/envvar .config/envvar
+cp ~/.config/startupCmds .config/startupCmds
