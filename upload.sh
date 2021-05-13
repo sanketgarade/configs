@@ -4,8 +4,11 @@
 # chmod 755 xyz.sh
 
 # copy local configs to the repo folder
-cp ~/.zshrc .zshrc
-cp ~/.gitconfig .gitconfig
-cp ~/.vim/vimrc .vim/vimrc
-cp ~/.config/envvar .config/envvar
-cp ~/.config/startupCmds .config/startupCmds
+cp ~/.zshrc .
+cp ~/.gitconfig .
+cp ~/.config/envvar .config/
+cp ~/.config/startupCmds .config/
+cp ~/archInitialWork.md docs/
+
+# folders
+cp -r ~/.vim/ .
