@@ -46,6 +46,8 @@ alias rr="ranger"
 alias glogin="eval \`ssh-agent\`; ssh-add"
 alias dwc="cd ~/oss/suckless/dwm"
 alias stc="cd ~/oss/suckless/st"
+alias tt="taskwarrior-tui"
+alias t="task"
 
 
 # ************ vim mode ************
