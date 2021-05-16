@@ -48,7 +48,7 @@ alias dwc="cd ~/oss/suckless/dwm"
 alias stc="cd ~/oss/suckless/st"
 alias tt="taskwarrior-tui"
 alias t="task"
-
+alias x="startx"
 
 # ************ vim mode ************
 bindkey -v
