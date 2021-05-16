@@ -65,3 +65,4 @@ vim clipboard copy
 `sudo systemctl enable NetworkManager.service`
 
 `sudo systemctl start NetworkManager.service`
+sudo pacman -S alsa-utils
