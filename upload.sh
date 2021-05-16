@@ -12,3 +12,5 @@ cp ~/archInitialWork.md docs/
 
 # folders
 cp -r ~/.vim/ .
+# vim - remove netrwhist file
+rm -f .vim/.netrwhist
