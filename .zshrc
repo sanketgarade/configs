@@ -49,6 +49,9 @@ alias stc="cd ~/oss/suckless/st"
 alias tt="taskwarrior-tui"
 alias t="task"
 alias x="startx"
+alias sls-build="sudo make clean install"
+alias g=git
+
 
 # ************ vim mode ************
 bindkey -v
