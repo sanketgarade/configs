@@ -69,10 +69,10 @@ nmap <C-M> <C-^>	" modified buffer
 
 " _____ mark remaps  ____ BEGIN
 " remapping mark seekers (for easy access on Japanese keyboard)
-:nnoremap - '
-:onoremap - '
-:nnoremap ^ `
-:onoremap ^ `
+" :nnoremap - '
+" :onoremap - '
+" :nnoremap ^ `
+" :onoremap ^ `
 " _____ mark remaps  ____ BEGIN
 
 " remap for find and replace global with confirmation
