@@ -27,8 +27,9 @@
 	loll      = log -1 --oneline
 	fetchpr   = fg() { git fetch origin refs/pull//merge: ; }; f
 	ls-pr     = ls-remote origin pull/*
-	g         = git
-	gc        = git commit
+	c         = commit
+	a         = add
+	d         = diff
 	logs      = log --stat
 	blist	  = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 	bdate     = for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(color:reset)' | column -t -s
