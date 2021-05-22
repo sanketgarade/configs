@@ -6,6 +6,7 @@
 # copy local configs to the repo folder
 cp ~/.zshrc .
 cp ~/.gitconfig .
+cp ~/.taskrc .
 cp ~/.config/envvar .config/
 cp ~/.config/startupCmds .config/
 cp ~/archInitialWork.md docs/
