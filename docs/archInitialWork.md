@@ -23,7 +23,7 @@
 
 ---
 ### brave browser
-### [how to install from AUR](https://medium.com/@danielmc/followers?source=post_page-----4ece7563678e--------------------------------)
+### [how to install from AUR](https://medium.com/@danielmc/installing-brave-on-arch-linux-4ece7563678e)
 `git clone https://aur.archlinux.org/brave-bin.git` 
 
 `makepkg -si`
@@ -65,4 +65,11 @@ vim clipboard copy
 `sudo systemctl enable NetworkManager.service`
 
 `sudo systemctl start NetworkManager.service`
-sudo pacman -S alsa-utils
+
+---
+### sound/audio control
+`sudo pacman -S alsa-utils`
+
+---
+### video player
+`sudo pacman -S mpv`
