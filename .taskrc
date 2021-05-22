@@ -29,9 +29,15 @@ data.location=~/.task
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 
-# sort tasks by project
-report.next.sort=project
+# sort
+# sort pending tasks by priority - H at top
+report.next.sort=priority-
 report.all.sort=project
 report.completed.sort=project
 
+# colour
+color.alternate=
+color.uda.priority.H=bold red
+
 # TODO - add colour coding to planned, wip, completed, overdue tasks
+# report.next.columns                id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
