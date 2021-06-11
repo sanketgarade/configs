@@ -7,6 +7,7 @@
 cp ~/.zshrc .
 cp ~/.gitconfig .
 cp ~/.taskrc .
+cp ~/.xinitrc .
 cp ~/.config/envvar .config/
 cp ~/.config/startupCmds .config/
 cp ~/archInitialWork.md docs/
