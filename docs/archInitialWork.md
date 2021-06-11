@@ -73,3 +73,16 @@ vim clipboard copy
 ---
 ### video player
 `sudo pacman -S mpv`
+
+---
+### email
+#### mutt wizard
+[link](https://github.com/LukeSmithxyz/mutt-wizard)
+
+```
+sudo pacman -S neomutt curl isync msmtp pass --needed
+git clone https://github.com/LukeSmithxyz/mutt-wizard
+cd mutt-wizard
+sudo make install
+```
+sudo pacman -S dosfstools
