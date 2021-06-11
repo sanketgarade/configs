@@ -51,6 +51,7 @@ alias t="task"
 alias x="startx"
 alias sls-build="sudo make clean install"
 alias g=git
+alias pc="sudo pacman"
 
 
 # ************ vim mode ************
