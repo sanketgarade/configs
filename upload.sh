@@ -10,6 +10,7 @@ cp ~/.taskrc .
 cp ~/.xinitrc .
 cp ~/.config/envvar .config/
 cp ~/.config/startupCmds .config/
+cp ~/.config/mykeys .config/
 cp ~/archInitialWork.md docs/
 
 # folders
