@@ -5,6 +5,21 @@
 ! Caps_Lock + h,j,k,l = left,down,up,right
 ! https://shellhell.wordpress.com/2012/01/31/hello-world/
 
+!keys mapped as per below table
+!-------------------------------
+!keyname	single use	hold use
+!-------------------------------
+!caps		esc			ctrl
+!esc		caps		?
+!windows	super		super
+!muhenkan	super		super
+!henkan		?			vim-navi
+!kata-hira	?			?
+!menu		default		?
+!-------------------------------
+! ? - TBD
+
+
 ! remove Caps Lock
 clear lock
 remove Lock = Caps_Lock
