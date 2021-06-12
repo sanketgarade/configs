@@ -1,8 +1,10 @@
 # remap keyboard
-xmodmap ~/.my_keyboard
+#xmodmap ~/.my_keyboard
 
-while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-do
-	sleep 1
-done &
+# status bar script
+# ./.config/bar &
+
+# startup commands
+./.config/startupCmds &
+
 exec dwm

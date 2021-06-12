@@ -1,2 +1,5 @@
 #!/bin/zsh
 # add any scripts that need to be run at startup
+
+# status bar script
+./.config/bar
