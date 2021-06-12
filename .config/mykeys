@@ -1,0 +1,25 @@
+! keysym (next word) = name of the key
+! keycode (next word) = numerical id of the key
+
+! vim like navigation system wide
+! Caps_Lock + h,j,k,l = left,down,up,right
+! https://shellhell.wordpress.com/2012/01/31/hello-world/
+
+! remove Caps Lock
+clear lock
+remove Lock = Caps_Lock
+remove Shift = Caps_Lock
+! add Mode_switch
+keycode 66 = NoSymbol NoSymbol
+keycode 66 = Mode_switch
+
+!			normal, shift, mode switch, shift mode switch, altGr, shift altGr
+keysym h = h H Left NoSymbol NoSymbol NoSymbol
+keysym j = j J Down NoSymbol NoSymbol NoSymbol
+keysym k = k K Up NoSymbol NoSymbol NoSymbol
+keysym l = l L Right NoSymbol lstroke Lstroke
+!!!!! TODO - what is lstroke and Lstroke?
+
+! muhenkan key on Japanese keyboard as windows key
+! muhenkan = left side key of spacebar
+keycode 102 = Super_L
