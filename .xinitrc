@@ -1,14 +1,10 @@
 # remap keyboard
 #xmodmap ~/.my_keyboard
 
-while xsetroot -name " | \
-`amixer get Master -M | grep Mono: | awk '{print $4}'` | \
-`acpi -b | awk '{print $4}' | sed s/,//` | \
-`date +'%a %d-%b-%y %I:%M:%S %p'` |  \
-`#uptime | sed 's/.*,//'`\
-"
-do
-	sleep 1
-done &
+# status bar script
+# ./.config/bar &
+
+# startup commands
+./.config/startupCmds &
 
 exec dwm
