@@ -8,7 +8,7 @@ while xsetroot -name " | \
 `nmcli | grep "route4 192" | awk '{print $1}'` | \
 `amixer get Master -M | grep Mono: | awk '{print $4}'` | \
 `acpi -b | awk '{print $4}' | sed s/,//` | \
-`date +'%a %d-%b-%y %I:%M:%S %p'`\
+`date +'%a %d-%b-%y | %I:%M:%S %p'`\
 `#uptime | sed 's/.*,//'`\
 "
 do
@@ -23,3 +23,4 @@ done
 # volume - check if it works for headphones
 # battery - charging (plugged in) status
 # run separate command for each block and concantanate into 1 string at end
+# emoji/symbols for various stuff
