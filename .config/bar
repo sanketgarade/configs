@@ -1,6 +1,11 @@
 #! /bin/sh
 
+# check if internet (not wifi) is connected (very basic)
+# if nmcli command shows a route4/inet4 entry, then it indicates internet OK.
+# `nmcli | grep "route4 192" | awk '{print $1}'`
+
 while xsetroot -name " | \
+`nmcli | grep "route4 192" | awk '{print $1}'` | \
 `amixer get Master -M | grep Mono: | awk '{print $4}'` | \
 `acpi -b | awk '{print $4}' | sed s/,//` | \
 `date +'%a %d-%b-%y %I:%M:%S %p'`\
@@ -13,3 +18,8 @@ done
 # TODO
 # internet connection status
 # input language status
+# volume - mute indicator
+# volume - extract specific line instead of grep mono
+# volume - check if it works for headphones
+# battery - charging (plugged in) status
+# run separate command for each block and concantanate into 1 string at end
