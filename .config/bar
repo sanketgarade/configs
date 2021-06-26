@@ -5,6 +5,7 @@
 # `nmcli | grep "route4 192" | awk '{print $1}'`
 
 while xsetroot -name " | \
+`setxkbmap -query | grep layout | awk '{print $2}'` | \
 `nmcli | grep "route4 192" | awk '{print $1}'` | \
 `amixer get Master -M | grep Mono: | awk '{print $4}'` | \
 `acpi -b | awk '{print $4}' | sed s/,//` | \
