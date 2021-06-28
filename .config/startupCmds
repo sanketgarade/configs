@@ -3,3 +3,7 @@
 
 # status bar script
 ./.config/bar
+
+# play with mpv server
+# does not work currently
+play-with-mpv &
