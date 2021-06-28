@@ -7,17 +7,19 @@
 
 !keys mapped as per below table
 !-------------------------------
-!keyname	single use	hold use
+!keyname	kcode	single use	hold use
 !-------------------------------
-!caps		esc			ctrl
-!esc		caps		?
-!windows	super		super
-!muhenkan	super		super
-!henkan		?			vim-navi
-!kata-hira	?			?
-!menu		default		?
+!caps		66		esc			ctrl
+!esc		9		caps		?
+!windows	133		super		super
+!muhenkan	102		super		super
+!henkan		100		?			vim-navi
+!kata-hira	101		?			?
+!menu		135		default		?
 !-------------------------------
 ! ? - TBD
+
+
 
 
 ! remove Caps Lock
