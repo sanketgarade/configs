@@ -86,3 +86,6 @@ cd mutt-wizard
 sudo make install
 ```
 sudo pacman -S dosfstools
+pc -S python-pip
+git clone https://aur.archlinux.org/play-with-mpv-git.git
+cp {/usr,~/.local}/share/applications/thann.play-with-mpv.desktop ~/.config/autostart
