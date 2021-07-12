@@ -9,6 +9,7 @@ while xsetroot -name " | \
 `nmcli | grep "route4 192" | awk '{print $1}'` | \
 `amixer get Master -M | grep Mono: | awk '{print $4}'` | \
 `acpi -b | awk '{print $4}' | sed s/,//` | \
+`acpi -t | awk '{print $4" "$6 }'` | \
 `date +'%a %d-%b-%y | %I:%M:%S %p'`\
 `#uptime | sed 's/.*,//'`\
 "
