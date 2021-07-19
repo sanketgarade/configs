@@ -44,6 +44,11 @@ set absolute brightness or inc/dec
 #### Indic Devanagari fonts
 `sudo pacman -S ttf-devanagarifonts`
 
+above one doesn't show jodakshar that well. install the below one -
+
+`git clone https://aur.archlinux.org/lohit-fonts.git`
+`makepkg -si`
+
 ---
 ### SSH tools
 `sudo pacman -S openssh`
