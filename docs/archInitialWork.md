@@ -49,6 +49,13 @@ above one doesn't show jodakshar that well. install the below one -
 `git clone https://aur.archlinux.org/lohit-fonts.git`
 `makepkg -si`
 
+installing lohit fonts showed marathi jodakshar well, but messed up the default 
+fonts. (`fc-match` resulted in `lohit-telegu` as default font). 
+To fix this, corrected the default font as per
+[this link](https://jichu4n.com/posts/how-to-set-default-fonts-and-font-aliases-on-linux/).
+
+set fonts as `Noto Sans Mono` in dwm and st config files.
+
 ---
 ### SSH tools
 `sudo pacman -S openssh`
