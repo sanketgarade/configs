@@ -27,6 +27,7 @@ highlight MatchParen cterm=bold ctermbg=darkred ctermfg=yellow
 " set syntax highlighting on
 syntax on
 
+set nocp	" needed for Align script -- https://www.vim.org/scripts/script.php?script_id=294
 filetype plugin on
 
 " do not wrap search at end of file
@@ -53,6 +54,13 @@ set fileformats=unix,dos,mac
 " Plug 'junegunn/vim-easy-align'
 " call plug#end()
 " _____ vim-plug ____ END
+
+" _____ vim-easy-align ____ BEGIN
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+" xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" nmap ga <Plug>(EasyAlign)
+" _____ vim-easy-align ____ END
 
 " see list of all vi keybindings
 " https://hea-www.harvard.edu/~fine/Tech/vi.html
