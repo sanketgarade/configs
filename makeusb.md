@@ -2,6 +2,7 @@
 
 ## format an existing usb drive
 ## https://www.macupdate.com/blog/post/82-how-to-format-usb-on-mac
+
 Type the following command and hit enter to list all the mounted devices available in your system
 ```diskutil list```
 
@@ -23,3 +24,8 @@ Formatting to ExFAT - ExFAT
 For example, if you want to format your drive to macOS Extended Journaled and rename it to "MyDisk," you can enter the terminal command as below:
 
 ```diskutil erasedisk JHFS+ MyDisk disk2```
+
+## make bootable usb
+## https://unix.stackexchange.com/a/414298
+sudo diskutil unmountdisk /dev/disk1
+sudo dd if=./debian.iso of=/dev/disk1 bs=1m
