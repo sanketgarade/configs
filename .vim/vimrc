@@ -83,6 +83,20 @@ nmap <C-M> <C-^>	" modified buffer
 " :onoremap ^ `
 " _____ mark remaps  ____ BEGIN
 
+" remap leader to comma
+:let mapleader = ","
+
+" _____ mark yank paste  ____ BEGIN
+" https://vi.stackexchange.com/a/96
+" https://vi.stackexchange.com/a/22207
+" * = only selected text outside vim, but not 'ctrl+c'ed yet
+" + = 'ctrl+c'ed text outside vim
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+" _____ mark yank paste  ____ BEGIN
+
 " remap for find and replace global with confirmation
 nnoremap <F3> :%s/<C-r><C-w>/
 " remap for find word under cursor and replace global with confirmation (not
