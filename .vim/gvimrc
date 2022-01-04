@@ -80,5 +80,3 @@ set shiftwidth=4
 "augroup END
 " _____ buffer views ____ END
 
-" set working directory
-cd \zSanket\CF2\FW\CF2_EOP_FW
