@@ -1,0 +1,4 @@
+# based on trial and error this setting makes zathura open and occupy the left
+# half of the screen
+set window-height 1200
+set window-width 980
