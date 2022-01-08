@@ -1,3 +1,8 @@
+# this will install most of the commonly needed packages
+# https://packages.debian.org/sid/texlive-latex-extra
+pc -Sy texlive-latexextra
+
+# for manual installation
 # make folder in the latex folder and copy the .sty files there
 sudo cp XXX.sty /usr/share/texmf-dist/tex/latex/XXX/
 # rebuild the paths so that tex knows the above folder was added
